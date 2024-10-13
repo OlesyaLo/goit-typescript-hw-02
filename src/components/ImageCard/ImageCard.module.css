@@ -1,0 +1,17 @@
+.imageCard {
+  max-width: 300px;
+  max-height: 180px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.imageCard:hover {
+  transform: scale(1.07);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

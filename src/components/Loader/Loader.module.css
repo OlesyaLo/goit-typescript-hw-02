@@ -1,0 +1,14 @@
+.loader {
+    z-index: 3;
+    position: fixed;
+    top: 20px;
+    left: 54%;
+    transform: translateX(-50%);
+  
+    @media screen and (max-width: 540px) {
+      top: 75px;
+    }
+  }
+  
+ 
+  

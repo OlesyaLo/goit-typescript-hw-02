@@ -1,0 +1,50 @@
+.modal {
+    background-color: rgb(83, 83, 83);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -20%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .overlay {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.728);
+  }
+  
+  .image {
+    max-height: 600px;
+  }
+  
+  .imageInfo {
+    background-color: rgba(0, 0, 0, 0.632);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: rgb(169, 169, 169);
+    @media screen and (max-width: 540px) {
+      font-size: 14px;
+      padding: 5px 0;
+    }
+  }
+  
+  .imageInfo li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
