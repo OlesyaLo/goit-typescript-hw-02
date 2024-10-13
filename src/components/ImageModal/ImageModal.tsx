@@ -18,8 +18,8 @@ export interface selectedImage {
 
 export interface ImageModalProps {
   isClose: boolean;
-  closeModal: (state: boolean) => void;
-  onClose: selectedImage;
+  onClose: (state: boolean) => void;
+  imageUrl: selectedImage;
 }
 
 

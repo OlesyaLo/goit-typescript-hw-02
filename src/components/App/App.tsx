@@ -25,33 +25,6 @@ function App() {
   const [selectedImg, setSelectedImg] = useState<string>("");
   
   
-  // useEffect(() => {
-  //   if (query === "") {
-  //     return;
-  //   }
-  //   async function fetchImages() {
-  //     try {
-  //       setLoading(true);
-  //       const data = await fetchImagesWithData(query, page);
-
-  //       if (results.length === 0) {
-  //         return toast.error("There are no images matching with your search query!");
-  //       }
-
-  //       setLoadBtn(total_pages > page);
-  //       setImages((prevImages) => {
-  //         return [...prevImages, ...results];
-  //       });
-  //       setLoading(false);
-  //       } catch {
-  //       setError(true);
-  //       } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchImages();
-  // }, [query, page]);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -115,7 +88,8 @@ function App() {
       {images.length > 0 && (
         <LoadMoreBtn onClick={loadMore} loading={loading} />
       )}
-      <ImageModal isOpen={modalIsOpen}
+      <ImageModal 
+      isOpen={modalIsOpen}
         onClose={closeModal}
         imageUrl={selectedImg} />
       <Toaster 
