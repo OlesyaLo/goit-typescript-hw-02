@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 
 const baseURL: string = "https://api.unsplash.com/";

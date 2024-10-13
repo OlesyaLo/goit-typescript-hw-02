@@ -20,7 +20,7 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [error, setError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-  const [loadBtn, setLoadBtn] = useState<boolean>(false);
+  // const [loadBtn, setLoadBtn] = useState<boolean>(false);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [selectedImg, setSelectedImg] = useState<string>("");
   
@@ -81,11 +81,14 @@ function App() {
   
   const handleSearch = async (topic: string) => {
       setQuery(topic);
-      setLoadBtn(false);
       setPage(1);
       setImages([]);
       setError(false);
       
+  };
+
+  const loadMore = async () => {
+    setPage((prevPage) => prevPage + 1);
   };
 
   const openModal = (imageUrl: string) => {
@@ -94,7 +97,7 @@ function App() {
   };
 
   const closeModal = () => {
-    setSelectedImg(false);
+    setModalIsOpen(false);
   };
 
   const convertToImageItem = (result: Image): ImageItem => ({
@@ -109,7 +112,9 @@ function App() {
       {error && <ErrorMessage />}
       {loading && <Loader />}
       {images.length > 0 && <ImageGallery images={images} openModal={openModal} />}
-      {loadBtn && <LoadMoreBtn onClick={() => setPage(prevPage => prevPage + 1)} />}
+      {images.length > 0 && (
+        <LoadMoreBtn onClick={loadMore} loading={loading} />
+      )}
       <ImageModal isOpen={modalIsOpen}
         onClose={closeModal}
         imageUrl={selectedImg} />
